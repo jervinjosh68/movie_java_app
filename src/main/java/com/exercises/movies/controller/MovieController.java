@@ -16,6 +16,11 @@ public class MovieController {
     @Autowired
     MovieService movieService;
 
+    @GetMapping("/")
+    public String publicPath() {
+        return "Hello, home!";
+    }
+
     @GetMapping("/movies")
     public List<Movie> getAllMovies(){
         return movieService.getAllMoviesByOrderByYearReleased();
@@ -27,10 +32,6 @@ public class MovieController {
 
 
     }
-//    @GetMapping("/movies/{genre}")
-//    public List<Movie> getMoviesByGenre(@PathVariable("genre") Genre genre){
-//        return movieService.getMoviesByGenre(genre);
-//    }
 
     @GetMapping("/movies/{genre}/{issequel}")
     public List<Movie> getMoviesByGenreAndIsSequel(@PathVariable("genre") Genre genre, @PathVariable("issequel") boolean isSequel){

@@ -9,5 +9,4 @@ public interface MovieRepository extends CrudRepository <Movie,Long> {
     List<Movie> getMoviesByYearReleased(int year);
     List<Movie> getAllMoviesByOrderByYearReleased();
     List<Movie> findByIsSequelIsTrue();
-    String getSecurity();
 }
